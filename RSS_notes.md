@@ -18,6 +18,7 @@
 
 ## Note from machine
 
+
 ### html format
 Head
 style -> baked css style
