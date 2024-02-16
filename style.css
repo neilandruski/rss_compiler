@@ -5,8 +5,8 @@
 }
 
 * {
-   margin: 0;
-   padding: 0; 
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -58,7 +58,6 @@ article p {
 
 .flag {
     background-color: #f96d00;
-    
 }
 
 .container {
@@ -71,5 +70,4 @@ article p {
 
 .item {
     flex-grow: 1;
-   
 }

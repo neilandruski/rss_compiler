@@ -1,3 +1,8 @@
+#personal ignore
+#html is generates based on the py script
+.html
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
