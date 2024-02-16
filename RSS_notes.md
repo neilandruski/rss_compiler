@@ -1,5 +1,5 @@
 
-# RRS feed digestor
+# RSS feed digestor
 
 - have a list of rss feeds URLs
 - Have a list of important keywords
