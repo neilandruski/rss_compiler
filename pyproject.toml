@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rss-compiler"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.9"
 requests = "^2.31.0"
 rss-parser = "^1.2.1"
+datetime = "^5.4"
 
 
 [build-system]
