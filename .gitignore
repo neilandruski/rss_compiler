@@ -1,7 +1,7 @@
 #personal ignore
 #html is generates based on the py script
 *.html
-imgs/
+images/
 
 
 # Byte-compiled / optimized / DLL files

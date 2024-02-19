@@ -10,6 +10,7 @@ python = "^3.9"
 requests = "^2.31.0"
 rss-parser = "^1.2.1"
 datetime = "^5.4"
+flask = "^3.0.2"
 
 
 [build-system]
