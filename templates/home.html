@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+        {% block container %}
+        <div class="container">
+                {% for item in content %}
+                <article class="item {% if item['flag']%}flag{% endif %}">
+                        <h3>
+                                <a href="{{ item['link'] }}" target="_blank"> {{ item['title'] }} </a>
+                        </h3>
+                        <p class="date"> {{ item['date'][:16] }} </p>
+                        <p> {{ item['description'] }} </p>
+                </article>
+                {% endfor %}
+        </div>
+        {% endblock %}

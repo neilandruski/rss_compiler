@@ -1,6 +1,6 @@
 #personal ignore
 #html is generates based on the py script
-*.html
+site.html
 images/
 
 

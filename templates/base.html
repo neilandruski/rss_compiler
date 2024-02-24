@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Security Trough</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Anton" rel="stylesheet">
+        <link href="static/stylesheets/style.css" rel="stylesheet">
+</head>
+<body>
+        <div id="bar">
+                <div><h1>Security Trough</h1><h6>Come get your feed</h6></div>
+                <div id="sheep"> <img src="static/img/sheep.png"alt="Sheep"></div>
+        </div>
+        {% block container %}{% endblock %}
+        <div id="flock"><img src="{{ url_for('static', filename='../static/img/sheep_trough.png') }}" alt="Sheep Trough"></div>
+</body>
