@@ -1,0 +1,16 @@
+{
+    "sites": [
+        "https://feeds.feedburner.com/TheHackersNews.xml",
+        "https://www.theregister.com/security/headlines.atom",
+        "https://www.bleepingcomputer.com/feed/"
+    ],
+    "keywords": [
+        "atlassian",
+        "global protect",
+        "macos",
+        "apple",
+        "windows",
+        "windows 11",
+        "microsoft"
+    ]
+}

@@ -7,6 +7,17 @@ SITES = [
     'https://www.theregister.com/security/headlines.atom',
     'https://www.bleepingcomputer.com/feed/'
 ]
+#https://www.csoonline.com/in/index.rss
+#https://feeds.feedburner.com/securityweek
+#http://krebsonsecurity.com/feed/
+#https://threatpost.com/feed/
+#https://www.darkreading.com/rss/all.xml
+#https://feeds.feedburner.com/TheHackersNews
+#https://www.theregister.com/security/headlines.atom
+#https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+#https://www.bleepingcomputer.com/feed/
+#https://www.infosecurity-magazine.com/rss/news
+
 
 FLAGS = ['atlassian',
          'global protect',
@@ -15,19 +26,21 @@ FLAGS = ['atlassian',
 
 ### FUNCTIONS
 def has_flag(content:str) -> bool:
-    if (FLAGS == None): return False
+    if (FLAGS is None): return False
     for word in FLAGS:
         if( word in content.lower()):
             return True
     return False
 
+
 def get_rss_feed(url:str) -> str:
     xml = requests.get(url).text
     return xml
 
+
 def parse_xml(xml:str) -> [dict]: # type: ignore
-    description = "description"
-    date_field = "pubDate"
+    description = 'description'
+    date_field = 'pubDate'
     articles = []
     flagged:bool = False
     soup = bs(xml, 'xml')
@@ -35,12 +48,12 @@ def parse_xml(xml:str) -> [dict]: # type: ignore
     rss_feed = soup.find_all('item')
     if ( not rss_feed ): 
         rss_feed = soup.find_all('entry')
-        description = "summary"
-        date_field = "published"
+        description = 'summary'
+        date_field = 'published'
 
     for item in rss_feed:
-        flagged = has_flag(item.find('title').string + " " + item.find(description).string)
-        if item.find('link').string == None: 
+        flagged = has_flag(item.find('title').string + ' ' + item.find(description).string)
+        if item.find('link').string is None: 
             link = item.find('link')['href']
         else:
             link = item.find('link').string 
@@ -51,17 +64,18 @@ def parse_xml(xml:str) -> [dict]: # type: ignore
                          'description': desc,
                          'link': link,
                          'flag': flagged})
-    print(len(articles))
     return articles
 
+
 def get_articles(sites:[str] = None): # type: ignore
-    if sites == None: sites = SITES
+    if sites is None: sites = SITES
     articles_list = []
     for site in SITES:
         articles_list += parse_xml(get_rss_feed(site))
 
     data = json.dumps(articles_list)
     return data
+
 
 if __name__ =='__main__':
     articles_list = []

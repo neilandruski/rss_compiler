@@ -10,12 +10,14 @@ def get_json():
     data = json.loads(file)
     return data
 
+
 @app.route('/')
 def home():
     with open('static/src/site.json', 'r') as f:
         file = f.read()
     data = json.loads(file)
     return render_template('home.html', content = data)
+
 
 if __name__ == '__main__':
     app.run(port=8008, debug=True)
